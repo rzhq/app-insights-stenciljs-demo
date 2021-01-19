@@ -37,8 +37,8 @@ export class AppHome {
 
   componentDidLoad() {
     console.log('component did load');
-    // let foo = {};
-    // return foo['did_load'].bar;
+    let foo = {};
+    return foo['did_load'].bar;
   }
 
   addCustomProperties() {
@@ -61,11 +61,16 @@ export class AppHome {
           <button>Profile page</button>
         </stencil-route-link>
 
+        <p><b>Error</b></p>
         <button onClick={this.throwError}>Throw Error</button>
         <button onClick={this.trackException}>Track Exception</button>
+
+        <p><b>Log</b></p>
         <button onClick={this.trackTrace}>Track Trace</button>
         <button onClick={this.trackMetric}>Track Metric</button>
         <button onClick={this.trackEvent}>Track Event</button>
+
+        <p><b>Other</b></p>
         <button onClick={this.addCustomProperties}>Add Custom Props</button>
         <button onClick={this.mute}>Mute</button>
       </div>
