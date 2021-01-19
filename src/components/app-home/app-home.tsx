@@ -13,6 +13,12 @@ export class AppHome {
     return foo['bar'].bar;
   }
 
+  throwErrorInPromise() {
+    new Promise(() => {
+      throw new Error('promise error')
+    });
+  }
+
   trackException() {
     appInsights.getAppInsights().trackException({ error: new Error('some error'), severityLevel: SeverityLevel.Error });
   }
@@ -62,8 +68,9 @@ export class AppHome {
         </stencil-route-link>
 
         <p><b>Error</b></p>
-        <button onClick={this.throwError}>Throw Error</button>
         <button onClick={this.trackException}>Track Exception</button>
+        <button onClick={this.throwError}>Throw Error</button>
+        <button onClick={this.throwErrorInPromise}>Track Promise Error</button>
 
         <p><b>Log</b></p>
         <button onClick={this.trackTrace}>Track Trace</button>
