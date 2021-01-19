@@ -28,7 +28,7 @@ export class AppInsightsService {
       () =>
         new ApplicationInsights({
           config: {
-            instrumentationKey: 'bbfb2b04-555c-495f-9b20-b352e4f2eba9',
+            instrumentationKey: 'your-instrumentation-key',
             enableAutoRouteTracking: true,
             autoTrackPageVisitTime: true,
             maxBatchInterval: 1000,
